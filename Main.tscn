@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://vq4fe6q4ose3"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_mgtmd"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mgtmd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Server_Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SERVER"
+
+[node name="Client_Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CLIENT"
+
+[connection signal="pressed" from="HBoxContainer/Server_Button" to="." method="_on_server_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Client_Button" to="." method="_on_client_button_pressed"]

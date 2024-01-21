@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://crmrup1hy53bj"]
+
+[ext_resource type="Script" path="res://Client/Client.gd" id="1_l62nf"]
+[ext_resource type="Script" path="res://Log_Screen.gd" id="2_qqmv5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l62nf")
+
+[node name="Transmit_Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -70.0
+offset_right = 194.0
+offset_bottom = -10.0
+grow_vertical = 0
+text = "Transmit to Server"
+
+[node name="Log_Screen" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.832
+offset_bottom = -0.135986
+grow_horizontal = 2
+bbcode_enabled = true
+text = "Logs:
+"
+scroll_following = true
+script = ExtResource("2_qqmv5")
+
+[connection signal="pressed" from="Transmit_Button" to="." method="_on_transmit_button_pressed"]
